@@ -1,0 +1,57 @@
+# Implementation Plan - Add Pujari Registration Button
+
+This plan outlines the steps to add a "Pujari Registration" button to the application, ensuring it directs users to the registration form with the "Pujari" role pre-selected.
+
+## User Review Required
+
+> [!IMPORTANT]
+> The "Pujari Registration" button will be added to both the Header (Navigation Bar) and the Hero Section of the home page to ensure maximum visibility for service providers.
+
+## Proposed Changes
+
+### 1. Internationalization (i18n)
+Add the translation keys for the new button.
+
+#### [MODIFY] [en.json](file:///e:/praveen/ayyaruapp_v1/src/i18n/locales/en.json)
+- Add `"Register_Pujari": "Pujari Registration"`
+- Add `"hero_pujari_cta": "Register as Pujari"`
+
+#### [MODIFY] [te.json](file:///e:/praveen/ayyaruapp_v1/src/i18n/locales/te.json)
+- Add `"Register_Pujari": "పూజారి రిజిస్ట్రేషన్"`
+- Add `"hero_pujari_cta": "పూజారిగా నమోదు చేసుకోండి"`
+
+### 2. Login Page Logic
+Enhance the login page to handle query parameters for user convenience.
+
+#### [MODIFY] [page.tsx](file:///e:/praveen/ayyaruapp_v1/app/login/page.tsx)
+- Use `useSearchParams` to detect `mode=signup` and `role=Pujari`.
+- Initialize `isLogin` and `role` states based on these parameters.
+
+### 3. Components
+Add the button to the UI.
+
+#### [MODIFY] [Header.tsx](file:///e:/praveen/ayyaruapp_v1/src/components/Header.tsx)
+- Add a "Pujari Registration" link next to the Login button in desktop view.
+- Add it to the mobile menu as well.
+- Style it to be distinct from the regular login button (e.g., secondary style or outline).
+
+#### [MODIFY] [HeroSection.tsx](file:///e:/praveen/ayyaruapp_v1/src/components/HeroSection.tsx)
+- Add a second CTA button below the main "Start Now" button specifically for Pujaris.
+
+## Open Questions
+
+- Should the button style match the "Login" button exactly, or should it be a secondary/outline button to distinguish it?
+- Is there any specific landing page for Pujaris, or should it go directly to the signup form? (Assuming signup form for now based on current app structure).
+
+## Verification Plan
+
+### Automated Tests
+- None planned as this is mostly UI/UX.
+
+### Manual Verification
+1. Click the "Pujari Registration" button in the Header.
+2. Verify it redirects to `/login?mode=signup&role=Pujari`.
+3. Verify the signup form is open and "Pujari" is selected in the role dropdown.
+4. Check the mobile menu for the same button.
+5. Check the Hero Section for the new CTA.
+6. Toggle languages and verify translations.

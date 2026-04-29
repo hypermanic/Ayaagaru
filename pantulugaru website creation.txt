@@ -1,0 +1,614 @@
+Developer Specification for Website Similar to samskara.app
+1. Tech Stack
+- Frontend:
+- React or Next.js (for fast, SEO-friendly, modern UI)
+- Tailwind CSS or Chakra UI (for clean, responsive design)
+- Backend:
+- Node.js with Express (lightweight API handling)
+- Firebase or Supabase (authentication, database, hosting)
+- Database:
+- Firestore (NoSQL, easy integration with Firebase)
+- Optionally PostgreSQL if relational data is needed
+- Hosting & Deployment:
+- Vercel (ideal for Next.js) or Netlify
+- Firebase Hosting for integrated backend + frontend
+
+2. Core Features
+- Landing Page:
+- Minimalist design with devotional imagery and soft color palette
+- Clear call-to-action (e.g., “Begin Your Journey”)
+- Guided Practices Section:
+- Text + audio/video integration for rituals, meditations, or cultural practices
+- Bilingual support (English + Telugu toggle)
+- Event Calendar:
+- Interactive calendar for temple events, rituals, or personal reminders
+- Option to sync with Google Calendar
+- User Profiles:
+- Secure login (Google, email, or phone OTP)
+- Personalized dashboard with saved practices, progress tracking
+- Community Engagement:
+- Forum or discussion board (moderated for respect and authenticity)
+- Testimonials or shared experiences
+
+3. Design Guidelines
+- Color Palette:
+- Earth tones, saffron, deep blues, ivory backgrounds
+- Typography:
+- Elegant serif for headings (e.g., Playfair Display)
+- Clean sans-serif for body text (e.g., Inter, Lato)
+- Animations:
+- Subtle fade-ins, smooth transitions, calming micro-interactions
+
+4. Additional Integrations
+- Push Notifications:
+- Daily reminders for meditation or rituals
+- Multimedia Support:
+- Audio chants, video tutorials, image galleries
+- Analytics:
+- Track user engagement with Google Analytics or Plausible
+
+5. Future Enhancements
+- AI-powered personalized recommendations (e.g., “Suggested meditation for your mood”)
+- E-commerce integration for devotional items or books
+- Offline mode (PWA support for mobile users)
+
+👉 This specification gives developers a clear roadmap to replicate the look, feel, and functionality of samskara.app while tailoring it to your cultural and devotional context.
+Would you like me to also draft a sample wireframe layout (textual blueprint of homepage, dashboard, etc.) so you can visualize the structure before development?
+
+
+
+
+-------------------------------------------------------------------------------------------
+Wireframe Layout (Textual Blueprint)
+Homepage
+• 	Header (Top Navigation Bar):
+• 	Logo (top-left, simple cultural symbol or temple-inspired icon)
+• 	Menu items: Home  Practices  Events  Community  About  Login
+• 	Language toggle: English / తెలుగు
+• 	Hero Section (Full-width banner):
+• 	Background: serene devotional image or abstract pattern
+• 	Headline: “Begin Your Journey of Mindfulness & Tradition”
+• 	CTA Button: Start Now
+• 	Highlights Section:
+• 	3 cards horizontally aligned:
+• 	Guided Practices (icon + short description)
+• 	Event Calendar (icon + short description)
+• 	Community Forum (icon + short description)
+• 	Featured Practice:
+• 	Embedded video/audio player with a sample meditation or ritual
+• 	Short bilingual description
+• 	Footer:
+• 	Quick links, contact info, social media icons
+• 	Copyright + temple/cultural acknowledgment
+
+Guided Practices Page
+• 	Sidebar navigation: Meditations  Rituals  Chants  Tutorials
+• 	Main content:
+• 	List of practices with thumbnail, title, and “Start” button
+• 	Each practice opens into a detail page with text + audio/video
+
+Events Page
+• 	Calendar view (month/week toggle)
+• 	Upcoming events list (scrollable)
+• 	Option to add event to Google Calendar
+• 	Event detail page with description, timings, and RSVP
+
+Community Page
+• 	Forum-style layout:
+• 	Categories: Experiences  Questions  Testimonials
+• 	Threads with user avatars, titles, and replies
+• 	CTA: Join the Conversation
+
+User Dashboard (after login)
+• 	Profile summary (name, avatar, progress stats)
+• 	Saved practices list
+• 	Upcoming events reminders
+• 	Daily devotional/mindfulness suggestion
+
+About Page
+• 	Mission statement (blend of tradition + modern mindfulness)
+• 	Temple/cultural background
+• 	Team or contributors
+
+
+-----------------------------------------------------------------------------------------
+
+Color Palette
+- Primary Colors:
+- Saffron (#F4A300): evokes devotion, tradition, and warmth
+- Deep Blue (#1E3A8A): calm, spiritual depth, trust
+- Secondary Colors:
+- Ivory (#FAF9F6): clean background, purity
+- Earth Brown (#6B4226): grounding, natural balance
+- Accent Colors:
+- Emerald Green (#2F855A): growth, vitality
+- Soft Gold (#D4AF37): sacred, celebratory highlights
+
+✍️ Typography Pairings
+- Headings (Serif):
+- Playfair Display — elegant, traditional, perfect for devotional titles
+- Alternative: Merriweather for a slightly softer tone
+- Body Text (Sans-serif):
+- Inter — clean, modern, highly readable across devices
+- Alternative: Lato for a warmer, approachable feel
+- Special Elements (Quotes, Chants, or Ritual Names):
+- Noto Serif Telugu — for authentic Telugu script rendering
+- Cursive Accent Font (e.g., Great Vibes) — for decorative highlights
+
+🌟 Visual Style Notes
+- Backgrounds: light ivory or soft gradients (saffron → ivory)
+- Buttons: rounded edges, saffron fill with white text, hover effect in deep blue
+- Icons: line-based, minimal, with accent colors for emphasis
+- Imagery: abstract mandala patterns, temple silhouettes, or nature-inspired motifs
+
+---------------------------------------------------------------
+Homepage Mockup (Textual Walkthrough)
+Header (Navigation Bar)
+- Background: Ivory (#FAF9F6)
+- Logo: A saffron-colored mandala icon on the left
+- Menu items (Home  Practices  Events  Community  About  Login) in Deep Blue (#1E3A8A) using Inter font
+- Language toggle (English / తెలుగు) styled in Earth Brown (#6B4226) with subtle underline hover effect
+
+Hero Section
+- Full-width background gradient: Saffron (#F4A300 → Ivory)
+- Headline: “Begin Your Journey of Mindfulness & Tradition” in Playfair Display, bold, deep blue
+- Subtext: “Guided practices, cultural rituals, and community support — all in one place.” in Inter, medium weight, earth brown
+- CTA Button: Rounded saffron button with white text (Start Now), hover effect turns deep blue with saffron text
+
+Highlights Section
+- Three horizontal cards with soft shadow, ivory background:
+- Guided Practices — saffron icon, heading in Playfair Display, description in Inter
+- Event Calendar — emerald green icon, heading in Playfair Display, description in Inter
+- Community Forum — deep blue icon, heading in Playfair Display, description in Inter
+
+Featured Practice
+- Centered card with Deep Blue (#1E3A8A) border
+- Embedded audio/video player with saffron play button
+- Title in Playfair Display, bilingual description in Inter + Noto Serif Telugu
+
+Footer
+- Background: Earth Brown (#6B4226)
+- Text: Ivory, small Inter font
+- Quick links aligned left, contact info center, social icons right in soft gold
+
+🌟 Overall Feel
+- Calm, devotional, and modern
+- Serif headings (Playfair Display) give elegance and tradition
+- Sans-serif body (Inter) ensures readability
+- Telugu script (Noto Serif Telugu) adds authenticity
+- Color palette balances warmth (saffron, gold) with serenity (blue, ivory)
+
+This mockup description gives you a visual identity + layout that developers and designers can directly translate into a working homepage.
+Would you like me to extend this into a full site style guide (buttons, forms, iconography, spacing rules) so your team has a complete design system to follow?
+-------------------------------------------------------------------------------------------------
+
+ Visual Identity Style Guide
+1. Colors
+- Primary:
+- Saffron (#F4A300) → Buttons, highlights, accents
+- Deep Blue (#1E3A8A) → Headings, navigation, borders
+- Secondary:
+- Ivory (#FAF9F6) → Backgrounds
+- Earth Brown (#6B4226) → Footer, text accents
+- Accents:
+- Emerald Green (#2F855A) → Success states, positive highlights
+- Soft Gold (#D4AF37) → Decorative elements, icons
+
+2. Typography
+- Headings: Playfair Display (Serif, Bold)
+- Body Text: Inter (Sans-serif, Regular)
+- Special Elements:
+- Noto Serif Telugu for Telugu script
+- Great Vibes (Cursive) for decorative quotes or chants
+
+3. Buttons
+- Primary Button:
+- Background: Saffron (#F4A300)
+- Text: White, bold Inter
+- Hover: Deep Blue background, saffron text
+- Shape: Rounded corners, subtle shadow
+- Secondary Button:
+- Background: Ivory (#FAF9F6)
+- Border: Deep Blue (#1E3A8A)
+- Text: Deep Blue, medium Inter
+- Hover: Saffron border + saffron text
+
+4. Forms
+- Input Fields:
+- Background: Ivory (#FAF9F6)
+- Border: Earth Brown (#6B4226), 1px solid
+- Focus State: Deep Blue glow outline
+- Labels: Inter, medium weight, deep blue
+- Error Messages: Red (#DC2626), italic Inter
+
+5. Iconography
+- Style: Line-based, minimal, rounded edges
+- Color: Deep Blue for default, saffron for active states
+- Examples: Mandala-inspired icons for rituals, calendar icon for events, chat bubble for community
+
+6. Spacing & Layout
+- Grid System: 12-column responsive grid (Bootstrap/Tailwind standard)
+- Padding: 16px for small elements, 32px for sections
+- Margins: Consistent 24px spacing between cards/components
+- Card Style: Ivory background, soft shadow, rounded corners
+
+7. Animations
+- Hover Effects: Smooth color transitions (0.3s ease-in-out)
+- Page Transitions: Fade-in on load, slide-in for modals
+- Micro-interactions: Button ripple effect, icon bounce on click
+
+8. Imagery
+- Style: Abstract mandalas, temple silhouettes, nature-inspired motifs
+- Tone: Serene, devotional, minimal clutter
+- Filters: Slight warm overlay (saffron tint) for consistency
+
+🌟 Summary
+This style guide ensures your site feels cohesive, devotional, and modern, with clear rules for colors, fonts, buttons, forms, icons, spacing, and animations. Designers and developers can now work seamlessly without ambiguity.
+
+--------------------------------------------------------------------------------------
+Here’s a sample component library description that defines reusable building blocks for your site. This ensures developers and designers can maintain consistency while speeding up development:
+
+📦 Component Library
+1. Navigation Bar
+- Style: Fixed top, ivory background, deep blue text
+- Elements: Logo (left), menu items (center), language toggle + login (right)
+- Behavior:
+- Hover: underline + saffron text
+- Mobile: collapses into hamburger menu
+
+2. Hero Banner
+- Style: Full-width gradient (saffron → ivory)
+- Elements: Headline (Playfair Display), subtext (Inter), CTA button (rounded saffron)
+- Behavior: Smooth fade-in animation on load
+
+3. Cards
+- Style: Ivory background, rounded corners, soft shadow
+- Variants:
+- Info Card: Icon (saffron/emerald/blue), heading (Playfair Display), description (Inter)
+- Practice Card: Thumbnail, bilingual title, “Start” button
+- Behavior: Hover lift effect, border glow in saffron
+
+4. Buttons
+- Primary: Saffron background, white text, rounded, hover deep blue
+- Secondary: Ivory background, deep blue border/text, hover saffron text
+- Icon Button: Circular, deep blue outline, saffron hover fill
+
+5. Forms
+- Input Fields: Ivory background, earth brown border, deep blue focus glow
+- Dropdowns: Rounded, saffron highlight on selection
+- Submit Button: Primary style with ripple effect
+
+6. Modal Windows
+- Style: Centered card, ivory background, deep blue border
+- Elements: Title (Playfair Display), content (Inter), close icon (saffron)
+- Behavior: Slide-in + fade-in animation
+
+7. Calendar Component
+- Style: Deep blue header, ivory grid, saffron highlights for events
+- Behavior:
+- Click event → opens modal with details
+- Sync option → Google Calendar integration
+
+8. Community Forum Thread
+- Style: Card layout with avatar, title, replies count
+- Behavior: Expand thread → modal or dedicated page
+- Accent: Soft gold icons for likes/replies
+
+9. Footer
+- Style: Earth brown background, ivory text
+- Elements: Quick links (left), contact info (center), social icons (right in soft gold)
+- Behavior: Hover → saffron glow on icons
+
+🌟 Summary
+This component library defines navigation, cards, buttons, forms, modals, calendars, forums, and footers with consistent styling rules. Developers can now reuse these blocks across pages, ensuring a cohesive devotional-modern experience.
+
+
+------------------------------------------------------------------------------------------
+
+
+⚛️ Atomic Design System Hierarchy
+1. Atoms (smallest building blocks)
+- Colors: Saffron, Deep Blue, Ivory, Earth Brown, Emerald Green, Soft Gold
+- Typography: Playfair Display, Inter, Noto Serif Telugu, Great Vibes
+- Icons: Line-based mandala, calendar, chat bubble, play button
+- Spacing Units: 8px, 16px, 24px, 32px
+- Basic Elements: Buttons, input fields, labels, headings
+
+2. Molecules (combinations of atoms)
+- Navigation Item: Icon + text link + hover effect
+- Form Field: Label + input + error message
+- Card: Thumbnail + heading + description + button
+- CTA Button Group: Primary + secondary button pair
+- Language Toggle: English / తెలుగు switch
+
+3. Organisms (groups of molecules forming sections)
+- Navigation Bar: Logo + menu items + language toggle + login button
+- Hero Banner: Headline + subtext + CTA button + background gradient
+- Highlights Section: 3 info cards aligned horizontally
+- Practice List: Multiple practice cards with bilingual titles
+- Event Calendar: Calendar grid + event cards + modal details
+- Forum Thread: User avatar + title + replies + interaction buttons
+
+4. Templates (page-level layouts)
+- Homepage Template: Header → Hero → Highlights → Featured Practice → Footer
+- Guided Practices Template: Sidebar navigation + practice list + detail modal
+- Events Template: Calendar view + upcoming events list + event detail modal
+- Community Template: Forum categories + threads + discussion modal
+- Dashboard Template: Profile summary + saved practices + upcoming events + suggestions
+
+5. Pages (final, content-filled versions)
+- Homepage: With actual devotional imagery, sample practice video, temple event highlights
+- Guided Practices Page: Populated with bilingual rituals, meditations, chants
+- Events Page: Real temple events, timings, RSVP options
+- Community Page: Active discussions, testimonials, shared experiences
+- Dashboard Page: Personalized user data, saved practices, reminders
+
+🌟 Why This Matters
+By structuring your site this way:
+- Developers can reuse atoms and molecules across multiple pages.
+- Designers can maintain visual consistency with clear rules.
+- The system scales easily as you add new features (e.g., e-commerce, AI recommendations).
+
+-----------------------------------------------------------------------------------
+
+Design Tokens (JSON Example)
+{
+  "colors": {
+    "primary": {
+      "saffron": "#F4A300",
+      "deepBlue": "#1E3A8A"
+    },
+    "secondary": {
+      "ivory": "#FAF9F6",
+      "earthBrown": "#6B4226"
+    },
+    "accent": {
+      "emeraldGreen": "#2F855A",
+      "softGold": "#D4AF37"
+    },
+    "feedback": {
+      "errorRed": "#DC2626",
+      "successGreen": "#16A34A"
+    }
+  },
+  "typography": {
+    "headings": {
+      "fontFamily": "Playfair Display",
+      "fontWeight": "700",
+      "lineHeight": "1.3"
+    },
+    "body": {
+      "fontFamily": "Inter",
+      "fontWeight": "400",
+      "lineHeight": "1.6"
+    },
+    "telugu": {
+      "fontFamily": "Noto Serif Telugu",
+      "fontWeight": "400",
+      "lineHeight": "1.5"
+    },
+    "decorative": {
+      "fontFamily": "Great Vibes",
+      "fontWeight": "400",
+      "lineHeight": "1.4"
+    }
+  },
+  "spacing": {
+    "xs": "8px",
+    "sm": "16px",
+    "md": "24px",
+    "lg": "32px",
+    "xl": "48px"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px"
+  },
+  "shadows": {
+    "card": "0 2px 6px rgba(0,0,0,0.1)",
+    "modal": "0 4px 12px rgba(0,0,0,0.15)",
+    "hover": "0 2px 8px rgba(244,163,0,0.3)"
+  }
+}
+
+
+
+🌟 How to Use
+- Colors: Apply primary.saffron for buttons, primary.deepBlue for headings, secondary.ivory for backgrounds.
+- Typography: Use headings for Playfair Display titles, body for Inter text, telugu for bilingual content, decorative for chants/quotes.
+- Spacing: Consistent padding/margin system across components.
+- Radius & Shadows: Rounded corners + soft shadows for cards, modals, and hover states.
+
+This token set acts as the single source of truth for your design system. Developers can import it into Tailwind config, Chakra theme, or a custom CSS-in-JS setup to ensure consistency across the site.
+Would you like me to also extend this into a Tailwind config example so your team can drop it straight into a project and start building with these tokens?
+------------------------------------------------------------------------------------------------
+
+Tailwind Config Example (tailwind.config.js)
+
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}", // adjust paths as needed
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          saffron: "#F4A300",
+          deepBlue: "#1E3A8A",
+        },
+        secondary: {
+          ivory: "#FAF9F6",
+          earthBrown: "#6B4226",
+        },
+        accent: {
+          emeraldGreen: "#2F855A",
+          softGold: "#D4AF37",
+        },
+        feedback: {
+          errorRed: "#DC2626",
+          successGreen: "#16A34A",
+        },
+      },
+      fontFamily: {
+        headings: ["Playfair Display", "serif"],
+        body: ["Inter", "sans-serif"],
+        telugu: ["Noto Serif Telugu", "serif"],
+        decorative: ["Great Vibes", "cursive"],
+      },
+      spacing: {
+        xs: "8px",
+        sm: "16px",
+        md: "24px",
+        lg: "32px",
+        xl: "48px",
+      },
+      borderRadius: {
+        sm: "4px",
+        md: "8px",
+        lg: "16px",
+      },
+      boxShadow: {
+        card: "0 2px 6px rgba(0,0,0,0.1)",
+        modal: "0 4px 12px rgba(0,0,0,0.15)",
+        hover: "0 2px 8px rgba(244,163,0,0.3)",
+      },
+    },
+  },
+  plugins: [],
+};
+
+How This Helps
+- Colors: Developers can use bg-primary-saffron or text-secondary-earthBrown directly in class names.
+- Typography: Apply font-headings for Playfair Display, font-body for Inter, or font-telugu for bilingual content.
+- Spacing: Use p-md or m-lg for consistent padding/margins.
+- Shadows & Radius: Apply shadow-card or rounded-lg for cards and modals.
+
+
+--------------------------------------------------------------------------------------
+
+Hero Section
+
+<section className="bg-gradient-to-r from-primary-saffron to-secondary-ivory py-xl text-center">
+  <h1 className="font-headings text-primary-deepBlue text-4xl mb-md">
+    Begin Your Journey of Mindfulness & Tradition
+  </h1>
+  <p className="font-body text-secondary-earthBrown text-lg mb-lg">
+    Guided practices, cultural rituals, and community support — all in one place.
+  </p>
+  <button className="bg-primary-saffron text-white font-body font-semibold px-lg py-sm rounded-md shadow-card hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+    Start Now
+  </button>
+</section>
+
+Card Component
+<div className="bg-secondary-ivory rounded-lg shadow-card p-md hover:shadow-hover transition">
+  <div className="flex items-center mb-sm">
+    <span className="text-primary-saffron text-2xl mr-sm">📿</span>
+    <h2 className="font-headings text-primary-deepBlue text-xl">
+      Guided Practices
+    </h2>
+  </div>
+  <p className="font-body text-secondary-earthBrown">
+    Explore meditations, rituals, and chants in English & Telugu.
+  </p>
+  <button className="mt-md bg-primary-saffron text-white font-body px-md py-xs rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+    Start
+  </button>
+</div>
+
+Button Variants
+
+<!-- Primary Button -->
+<button className="bg-primary-saffron text-white font-body font-semibold px-md py-sm rounded-md shadow-card hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+  Primary Action
+</button>
+
+<!-- Secondary Button -->
+<button className="bg-secondary-ivory border border-primary-deepBlue text-primary-deepBlue font-body px-md py-sm rounded-md hover:text-primary-saffron hover:border-primary-saffron transition">
+  Secondary Action
+</button>
+
+ Why This Matters
+• 	These snippets show real-world usage of your design tokens in Tailwind.
+• 	Developers can copy-paste and adapt them for different sections (hero, cards, buttons).
+• 	The hover states, shadows, and typography ensure the site feels devotional yet modern.
+-------------------------------------------------------------------------
+
+Dashboard Layout (Tailwind Example)
+
+<div className="min-h-screen bg-secondary-ivory p-lg">
+  {/* Profile Summary */}
+  <section className="bg-white rounded-lg shadow-card p-md mb-lg">
+    <div className="flex items-center">
+      <img
+        src="/avatar.png"
+        alt="User Avatar"
+        className="w-16 h-16 rounded-full mr-md"
+      />
+      <div>
+        <h2 className="font-headings text-primary-deepBlue text-2xl">
+          Welcome, Vaishnav
+        </h2>
+        <p className="font-body text-secondary-earthBrown">
+          Your devotional journey continues…
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Saved Practices */}
+  <section className="bg-white rounded-lg shadow-card p-md mb-lg">
+    <h3 className="font-headings text-primary-deepBlue text-xl mb-md">
+      Saved Practices
+    </h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
+      <div className="bg-secondary-ivory rounded-md p-md shadow-card hover:shadow-hover transition">
+        <h4 className="font-headings text-primary-deepBlue">Morning Meditation</h4>
+        <p className="font-body text-secondary-earthBrown">Duration: 15 mins</p>
+        <button className="mt-sm bg-primary-saffron text-white px-md py-xs rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+          Resume
+        </button>
+      </div>
+      <div className="bg-secondary-ivory rounded-md p-md shadow-card hover:shadow-hover transition">
+        <h4 className="font-headings text-primary-deepBlue">Evening Chant</h4>
+        <p className="font-body text-secondary-earthBrown">Duration: 10 mins</p>
+        <button className="mt-sm bg-primary-saffron text-white px-md py-xs rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+          Resume
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {/* Upcoming Events */}
+  <section className="bg-white rounded-lg shadow-card p-md">
+    <h3 className="font-headings text-primary-deepBlue text-xl mb-md">
+      Upcoming Events
+    </h3>
+    <ul className="space-y-md">
+      <li className="flex justify-between items-center bg-secondary-ivory p-md rounded-md shadow-card">
+        <div>
+          <h4 className="font-headings text-primary-deepBlue">Temple Festival</h4>
+          <p className="font-body text-secondary-earthBrown">March 28, 2026</p>
+        </div>
+        <button className="bg-secondary-ivory border border-primary-deepBlue text-primary-deepBlue px-md py-xs rounded-md hover:text-primary-saffron hover:border-primary-saffron transition">
+          RSVP
+        </button>
+      </li>
+      <li className="flex justify-between items-center bg-secondary-ivory p-md rounded-md shadow-card">
+        <div>
+          <h4 className="font-headings text-primary-deepBlue">Community Chanting</h4>
+          <p className="font-body text-secondary-earthBrown">April 2, 2026</p>
+        </div>
+        <button className="bg-secondary-ivory border border-primary-deepBlue text-primary-deepBlue px-md py-xs rounded-md hover:text-primary-saffron hover:border-primary-saffron transition">
+          RSVP
+        </button>
+      </li>
+    </ul>
+  </section>
+</div>
+Features Demonstrated
+• 	Profile Summary: Avatar + welcome message styled with Playfair Display and Inter.
+• 	Saved Practices: Grid of practice cards with saffron buttons and hover states.
+• 	Upcoming Events: List of event cards with RSVP buttons styled in secondary/primary colors.
+• 	Consistency: All spacing, shadows, and typography follow the design tokens we defined.

@@ -1,0 +1,454 @@
+Here’s a mobile-first responsive design guide for your site. This ensures the dashboard, homepage, and other layouts adapt beautifully across phones, tablets, and desktops:
+
+📱 Mobile-First Responsive Design Guide
+1. Breakpoints
+Use Tailwind’s default breakpoints (or customize if needed):
+- sm (≥640px): Small devices (phones)
+- md (≥768px): Medium devices (tablets)
+- lg (≥1024px): Large devices (laptops)
+- xl (≥1280px): Extra large (desktops)
+
+2. Layout Rules
+- Mobile (default):
+- Stack sections vertically (hero → highlights → featured → footer).
+- Cards: full-width, stacked with spacing (space-y-md).
+- Navigation: collapses into hamburger menu.
+- Dashboard: profile summary → saved practices → events stacked.
+- Tablet (md):
+- Cards: 2-column grid (grid-cols-2).
+- Navigation: horizontal bar with visible menu items.
+- Dashboard: saved practices in 2-column grid, events list side-by-side.
+- Desktop (lg+):
+- Cards: 3-column grid (grid-cols-3).
+- Navigation: full-width bar with logo left, menu center, profile right.
+- Dashboard: profile summary left, saved practices center, events right (3-column layout).
+
+3. Adaptive Components
+- Hero Section:
+- Mobile: centered text, button full-width.
+- Tablet/Desktop: text left-aligned, button inline.
+- Cards:
+- Mobile: stacked full-width.
+- Tablet: grid of 2.
+- Desktop: grid of 3 with hover shadows.
+- Calendar:
+- Mobile: list view of events.
+- Tablet/Desktop: full calendar grid with clickable days.
+- Forum Threads:
+- Mobile: condensed list view.
+- Tablet/Desktop: expanded cards with avatars + replies.
+
+4. Spacing & Touch Targets
+- Minimum 44px height for buttons and inputs (finger-friendly).
+- Use p-sm (16px) padding for mobile, p-md (24px) for tablet, p-lg (32px) for desktop.
+- Ensure hover states degrade gracefully into tap states on mobile.
+
+5. Typography Scaling
+- Mobile: Headings text-2xl, body text-base.
+- Tablet: Headings text-3xl, body text-lg.
+- Desktop: Headings text-4xl, body text-lg.
+
+🌟 Summary
+This guide ensures your site feels fluid and adaptive:
+- Mobile-first stacking for simplicity.
+- Tablet grids for balance.
+- Desktop layouts for richness.
+- Consistent spacing, touch-friendly buttons, and scalable typography.
+----------------------------------------------------------------------
+Responsive Homepage Layout (Tailwind Example)
+
+<div className="min-h-screen bg-secondary-ivory">
+
+  {/* Hero Section */}
+  <section className="bg-gradient-to-r from-primary-saffron to-secondary-ivory py-xl px-md text-center md:text-left">
+    <h1 className="font-headings text-primary-deepBlue text-3xl md:text-4xl lg:text-5xl mb-md">
+      Begin Your Journey of Mindfulness & Tradition
+    </h1>
+    <p className="font-body text-secondary-earthBrown text-base md:text-lg lg:text-xl mb-lg max-w-2xl mx-auto md:mx-0">
+      Guided practices, cultural rituals, and community support — all in one place.
+    </p>
+    <button className="bg-primary-saffron text-white font-body font-semibold px-lg py-sm rounded-md shadow-card hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+      Start Now
+    </button>
+  </section>
+
+  {/* Highlights Section */}
+  <section className="py-xl px-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+      <div className="bg-white rounded-lg shadow-card p-md hover:shadow-hover transition">
+        <h2 className="font-headings text-primary-deepBlue text-xl mb-sm">Guided Practices</h2>
+        <p className="font-body text-secondary-earthBrown">Explore meditations, rituals, and chants in English & Telugu.</p>
+      </div>
+      <div className="bg-white rounded-lg shadow-card p-md hover:shadow-hover transition">
+        <h2 className="font-headings text-primary-deepBlue text-xl mb-sm">Event Calendar</h2>
+        <p className="font-body text-secondary-earthBrown">Stay connected with temple events and reminders.</p>
+      </div>
+      <div className="bg-white rounded-lg shadow-card p-md hover:shadow-hover transition">
+        <h2 className="font-headings text-primary-deepBlue text-xl mb-sm">Community Forum</h2>
+        <p className="font-body text-secondary-earthBrown">Share experiences and join discussions with others.</p>
+      </div>
+    </div>
+  </section>
+
+  {/* Featured Practice Section */}
+  <section className="py-xl px-md text-center">
+    <div className="bg-white rounded-lg shadow-card p-lg max-w-2xl mx-auto">
+      <h3 className="font-headings text-primary-deepBlue text-2xl mb-md">Featured Practice</h3>
+      <p className="font-body text-secondary-earthBrown mb-md">
+        Try today’s guided meditation for peace and clarity.
+      </p>
+      <div className="bg-secondary-ivory rounded-md p-md shadow-card">
+        {/* Placeholder for audio/video player */}
+        <button className="bg-primary-saffron text-white px-md py-sm rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+          Play Practice
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+Responsive Behavior
+- Mobile (default):
+- Sections stacked vertically, centered text.
+- Cards full-width, stacked with spacing.
+- Tablet (md):
+- Hero text left-aligned, button inline.
+- Highlights in 2-column grid.
+- Desktop (lg):
+- Hero text larger, left-aligned.
+- Highlights in 3-column grid.
+- Featured practice centered with max-width for balance.
+--------------------------------------------------------------------------------------------------
+Full Responsive Homepage Layout (Tailwind Example)
+
+<div className="min-h-screen bg-secondary-ivory flex flex-col">
+
+  {/* Navigation Bar */}
+  <header className="bg-secondary-ivory shadow-card px-md py-sm flex justify-between items-center">
+    <div className="flex items-center">
+      <img src="/logo.png" alt="Logo" className="w-10 h-10 mr-sm" />
+      <span className="font-headings text-primary-deepBlue text-xl">Samskara</span>
+    </div>
+    <nav className="hidden md:flex space-x-md font-body text-primary-deepBlue">
+      <a href="#" className="hover:text-primary-saffron">Home</a>
+      <a href="#" className="hover:text-primary-saffron">Practices</a>
+      <a href="#" className="hover:text-primary-saffron">Events</a>
+      <a href="#" className="hover:text-primary-saffron">Community</a>
+      <a href="#" className="hover:text-primary-saffron">About</a>
+    </nav>
+    <button className="bg-primary-saffron text-white px-md py-xs rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+      Login
+    </button>
+  </header>
+
+  {/* Hero Section */}
+  <section className="bg-gradient-to-r from-primary-saffron to-secondary-ivory py-xl px-md text-center md:text-left">
+    <h1 className="font-headings text-primary-deepBlue text-3xl md:text-4xl lg:text-5xl mb-md">
+      Begin Your Journey of Mindfulness & Tradition
+    </h1>
+    <p className="font-body text-secondary-earthBrown text-base md:text-lg lg:text-xl mb-lg max-w-2xl mx-auto md:mx-0">
+      Guided practices, cultural rituals, and community support — all in one place.
+    </p>
+    <button className="bg-primary-saffron text-white font-body font-semibold px-lg py-sm rounded-md shadow-card hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+      Start Now
+    </button>
+  </section>
+
+  {/* Highlights Section */}
+  <section className="py-xl px-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+      <div className="bg-white rounded-lg shadow-card p-md hover:shadow-hover transition">
+        <h2 className="font-headings text-primary-deepBlue text-xl mb-sm">Guided Practices</h2>
+        <p className="font-body text-secondary-earthBrown">Explore meditations, rituals, and chants in English & Telugu.</p>
+      </div>
+      <div className="bg-white rounded-lg shadow-card p-md hover:shadow-hover transition">
+        <h2 className="font-headings text-primary-deepBlue text-xl mb-sm">Event Calendar</h2>
+        <p className="font-body text-secondary-earthBrown">Stay connected with temple events and reminders.</p>
+      </div>
+      <div className="bg-white rounded-lg shadow-card p-md hover:shadow-hover transition">
+        <h2 className="font-headings text-primary-deepBlue text-xl mb-sm">Community Forum</h2>
+        <p className="font-body text-secondary-earthBrown">Share experiences and join discussions with others.</p>
+      </div>
+    </div>
+  </section>
+
+  {/* Featured Practice Section */}
+  <section className="py-xl px-md text-center">
+    <div className="bg-white rounded-lg shadow-card p-lg max-w-2xl mx-auto">
+      <h3 className="font-headings text-primary-deepBlue text-2xl mb-md">Featured Practice</h3>
+      <p className="font-body text-secondary-earthBrown mb-md">
+        Try today’s guided meditation for peace and clarity.
+      </p>
+      <div className="bg-secondary-ivory rounded-md p-md shadow-card">
+        {/* Placeholder for audio/video player */}
+        <button className="bg-primary-saffron text-white px-md py-sm rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+          Play Practice
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="bg-secondary-earthBrown text-secondary-ivory py-md px-md mt-auto">
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="mb-sm md:mb-0">
+        <p className="font-body">&copy; 2026 Samskara. All rights reserved.</p>
+      </div>
+      <div className="flex space-x-md">
+        <a href="#" className="hover:text-primary-saffron">Contact</a>
+        <a href="#" className="hover:text-primary-saffron">Privacy</a>
+        <a href="#" className="hover:text-primary-saffron">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+ Responsive Behavior
+- Mobile: Navigation collapses into logo + login button, sections stacked vertically.
+- Tablet: Navigation bar shows menu items, highlights in 2-column grid.
+- Desktop: Full navigation bar, highlights in 3-column grid, hero text larger and left-aligned.
+
+
+--------------------------------------------------------------------------------
+
+Here’s how you can set up a multi-page routing structure in Next.js for your devotional-modern site. This connects the homepage, practices, events, and community pages together with clean navigation:
+
+📂 Project Structure
+/pages
+  index.js          // Homepage
+  practices.js      // Guided Practices
+  events.js         // Event Calendar
+  community.js      // Forum/Community
+  about.js          // About Page
+  _app.js           // Global styles/layout
+  _document.js      // Custom document setup
+/components
+  Navbar.js         // Shared navigation bar
+  Footer.js         // Shared footer
+  Card.js           // Reusable card component
+  Layout.js         // Wrapper for consistent layout
+  
+  Example Homepage (pages/index.js
+
+  
+  import Layout from "../components/Layout";
+
+export default function Home() {
+  return (
+    <Layout>
+      <section className="bg-gradient-to-r from-primary-saffron to-secondary-ivory py-xl px-md text-center md:text-left">
+        <h1 className="font-headings text-primary-deepBlue text-4xl mb-md">
+          Begin Your Journey of Mindfulness & Tradition
+        </h1>
+        <p className="font-body text-secondary-earthBrown text-lg mb-lg max-w-2xl mx-auto md:mx-0">
+          Guided practices, cultural rituals, and community support — all in one place.
+        </p>
+        <button className="bg-primary-saffron text-white px-lg py-sm rounded-md shadow-card hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+          Start Now
+        </button>
+      </section>
+    </Layout>
+  );
+}
+
+
+Events Page (pages/events.js)
+
+ Practices Page ()
+
+import Layout from "../components/Layout";
+
+export default function Practices() {
+  return (
+    <Layout>
+      <h2 className="font-headings text-primary-deepBlue text-3xl mb-md">Guided Practices</h2>
+      <p className="font-body text-secondary-earthBrown mb-lg">
+        Explore meditations, rituals, and chants in English & Telugu.
+      </p>
+      {/* Example practice cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
+        <div className="bg-white rounded-lg shadow-card p-md">Morning Meditation</div>
+        <div className="bg-white rounded-lg shadow-card p-md">Evening Chant</div>
+      </div>
+    </Layout>
+  );
+}
+
+
+import Layout from "../components/Layout";
+
+export default function Events() {
+  return (
+    <Layout>
+      <h2 className="font-headings text-primary-deepBlue text-3xl mb-md">Upcoming Events</h2>
+      <ul className="space-y-md">
+        <li className="bg-secondary-ivory p-md rounded-md shadow-card">
+          Temple Festival — March 28, 2026
+        </li>
+        <li className="bg-secondary-ivory p-md rounded-md shadow-card">
+          Community Chanting — April 2, 2026
+        </li>
+      </ul>
+    </Layout>
+  );
+}
+
+ Community Page ( 💬 Community Page (pages/community.js
+)
+import Layout from "../components/Layout";
+
+export default function Community() {
+  return (
+    <Layout>
+      <h2 className="font-headings text-primary-deepBlue text-3xl mb-md">Community Forum</h2>
+      <p className="font-body text-secondary-earthBrown mb-lg">
+        Share your experiences and join discussions with others.
+      </p>
+      {/* Placeholder for forum threads */}
+      <div className="bg-white rounded-lg shadow-card p-md">Thread Example</div>
+    </Layout>
+  );
+}
+
+ Shared Layout (components/Layout.js
+
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+export default function Layout({ children }) {
+  return (
+    <div className="min-h-screen flex flex-col bg-secondary-ivory">
+      <Navbar />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+    </div>
+  );
+}
+
+ Summary
+This setup gives you:
+- Reusable components (Navbar, Footer, Layout).
+- Clean routing with Next.js pages (/practices, /events, /community).
+- Consistent design system applied across all pages.
+
+
+-------------------------------------------------------
+
+Updated Project Structure
+
+/pages
+  index.js
+  practices.js
+  practices/[id].js   // Dynamic practice detail
+  events.js
+  events/[id].js      // Dynamic event detail
+  community.js
+  about.js
+/components
+  Layout.js
+  Navbar.js
+  Footer.js
+  
+  Practice Detail Page (pages/practices/[id].js)
+
+import { useRouter } from "next/router";
+import Layout from "../../components/Layout";
+
+export default function PracticeDetail() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Example data (replace with API or DB fetch)
+  const practices = {
+    "morning-meditation": {
+      title: "Morning Meditation",
+      description: "A 15-minute guided meditation to start your day.",
+      duration: "15 mins",
+    },
+    "evening-chant": {
+      title: "Evening Chant",
+      description: "A devotional chant to bring peace at night.",
+      duration: "10 mins",
+    },
+  };
+
+  const practice = practices[id];
+
+  if (!practice) return <Layout><p>Practice not found.</p></Layout>;
+
+  return (
+    <Layout>
+      <h2 className="font-headings text-primary-deepBlue text-3xl mb-md">
+        {practice.title}
+      </h2>
+      <p className="font-body text-secondary-earthBrown mb-md">
+        {practice.description}
+      </p>
+      <p className="font-body text-secondary-earthBrown">
+        Duration: {practice.duration}
+      </p>
+      <button className="mt-md bg-primary-saffron text-white px-md py-sm rounded-md hover:bg-primary-deepBlue hover:text-primary-saffron transition">
+        Start Practice
+      </button>
+    </Layout>
+  );
+}
+
+📅 Event Detail Page (pages/events/[id].js)
+
+import { useRouter } from "next/router";
+import Layout from "../../components/Layout";
+
+export default function EventDetail() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  // Example data (replace with API or DB fetch)
+  const events = {
+    "temple-festival": {
+      title: "Temple Festival",
+      date: "March 28, 2026",
+      description: "A grand celebration with rituals, dance, and community gathering.",
+    },
+    "community-chanting": {
+      title: "Community Chanting",
+      date: "April 2, 2026",
+      description: "Join the community in collective chanting for peace and devotion.",
+    },
+  };
+
+  const event = events[id];
+
+  if (!event) return <Layout><p>Event not found.</p></Layout>;
+
+  return (
+    <Layout>
+      <h2 className="font-headings text-primary-deepBlue text-3xl mb-md">
+        {event.title}
+      </h2>
+      <p className="font-body text-secondary-earthBrown mb-md">
+        Date: {event.date}
+      </p>
+      <p className="font-body text-secondary-earthBrown mb-md">
+        {event.description}
+      </p>
+      <button className="bg-secondary-ivory border border-primary-deepBlue text-primary-deepBlue px-md py-sm rounded-md hover:text-primary-saffron hover:border-primary-saffron transition">
+        RSVP
+      </button>
+    </Layout>
+  );
+}
+ How It Works
+
+/practices/[id] → shows details for a specific practice (e.g., /practices/morning-meditation).
+
+/events/[id] → shows details for a specific event (e.g., /events/temple-festival).
+
+Data can be fetched from an API, database, or static JSON file.
+
+Next.js automatically handles the dynamic routing based on [id].js.
+
+This gives you a scalable structure where each ritual or event has its own dedicated page, making the experience more immersive and personalized.
+
+Would you like me to also show how to integrate real data fetching (getStaticProps / getServerSideProps) so these pages pull content dynamically from a CMS or database instead of hardcoded objects?

@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Updated Bookings Rules
+    match /bookings/{bookingId} {
+      // 1. Allow anyone to CREATE a booking (needed for guest bookings)
+      allow create: if true;
+      
+      // 2. Allow authenticated users to READ/QUERY bookings
+      // This enables the "Quick Lookup" feature for Pujaris
+      allow read: if request.auth != null;
+      
+      // 3. (Optional) Allow only the creator or an admin to UPDATE/DELETE
+      allow update, delete: if request.auth != null && (resource.data.userId == request.auth.uid || request.auth.token.role == 'admin');
+    }
+    
+    // Default rule for other collections
+    match /{document=**} {
+       // Only authenticated users can read/write everything else
+      allow read, write: if request.auth != null;
+    }
+  }
+}

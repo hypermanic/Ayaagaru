@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "133479382865",
+    "project_id": "pantulugaru",
+    "storage_bucket": "pantulugaru.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133479382865:android:8b6c11d99f102505d05d70",
+        "android_client_info": {
+          "package_name": "com.pantulugaru.devotional"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNWGkYsX2Eyf7WY2L9pViTVRz2carorjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

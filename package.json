@@ -1,0 +1,41 @@
+{
+  "name": "pantulugaru-devotional",
+  "version": "1.0.0",
+  "description": "Devotional practices platform with guided meditations, rituals, and community engagement",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.3.0",
+    "@capacitor/core": "^8.3.0",
+    "axios": "^1.6.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "firebase": "^10.5.0",
+    "firebaseui": "^6.1.0",
+    "i18next": "^23.7.0",
+    "next": "^16.2.1",
+    "react": "^18.2.0",
+    "react-calendar": "^4.2.1",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.5.0",
+    "react-icons": "^4.12.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.2.0",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.6.1",
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^14.0.0",
+    "postcss": "^8.4.31"
+  }
+}

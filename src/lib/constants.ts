@@ -1,0 +1,15 @@
+export const RITUAL_OPTIONS = [
+  'Ganesh Pooja',
+  'Satyanarayana Pooja',
+  'Lakshmi Pooja',
+  'Navagraha Homam',
+  'Sudarshana Homam',
+  'Rudra Homam',
+  'Housewarming',
+  'Wedding Ceremony',
+  'Naming Ceremony',
+  'Śrāddha Karma',
+  'Pitṛ Pakṣa Rites',
+  'Tarpanam',
+  'Annual Ceremony',
+];

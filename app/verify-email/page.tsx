@@ -141,7 +141,7 @@ export default function VerifyEmailPage() {
               )}
 
               {/* Instructions */}
-              <div className="bg-secondary-ivory/50 rounded-2xl p-5 border border-gray-100 mb-6">
+              <div className="bg-secondary-ivory/50 rounded-2xl p-5 border border-gray-100 mb-4">
                 <h3 className="font-bold text-primary-deepBlue text-sm mb-3">How to verify:</h3>
                 <ol className="space-y-2 text-sm text-gray-600 font-body">
                   <li className="flex items-start gap-2">
@@ -153,15 +153,27 @@ export default function VerifyEmailPage() {
                     Find the email from &quot;noreply@pantulugaru.firebaseapp.com&quot;
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="bg-primary-saffron text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</span>
-                    Click the verification link in the email
+                    <span className="bg-red-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</span>
+                    <span><strong className="text-red-600">Can&apos;t find it? Check your Spam, Junk, or Promotions folder!</strong> The email often lands there.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="bg-primary-saffron text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">4</span>
+                    Click the verification link in the email
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="bg-primary-saffron text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">5</span>
                     Come back here and click &quot;I&apos;ve Verified&quot;
                   </li>
                 </ol>
-                <p className="text-xs text-gray-400 mt-3">💡 Check your spam/promotions folder if you don&apos;t see the email.</p>
+              </div>
+
+              {/* Spam Warning */}
+              <div className="bg-orange-50 border border-orange-200 rounded-xl px-4 py-3 mb-6 flex items-start gap-3">
+                <span className="text-xl mt-0.5">⚠️</span>
+                <div>
+                  <p className="text-sm font-bold text-orange-700">Check your Spam / Junk folder</p>
+                  <p className="text-xs text-orange-600 mt-1">Verification emails from Firebase often go to Spam or Promotions. If you find it there, mark it as &quot;Not Spam&quot; and click the verification link.</p>
+                </div>
               </div>
 
               {/* Action Buttons */}

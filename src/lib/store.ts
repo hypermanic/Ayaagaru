@@ -7,6 +7,7 @@ export interface User {
   displayName: string;
   fullName: string;
   profileImage?: string;
+  emailVerified?: boolean;
   role?: string;
   mobNumber?: string;
   location?: string;

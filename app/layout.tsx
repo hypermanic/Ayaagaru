@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '../src/styles/globals.css'
 import DeviceProvider from '@components/DeviceProvider'
+import AuthProvider from '@components/AuthProvider'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <DeviceProvider>
-          <Header />
-          {children}
-          <Footer />
-        </DeviceProvider>
+        <AuthProvider>
+          <DeviceProvider>
+            <Header />
+            {children}
+            <Footer />
+          </DeviceProvider>
+        </AuthProvider>
       </body>
     </html>
   )

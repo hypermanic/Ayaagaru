@@ -5,7 +5,7 @@ import { useAuthStore } from '@/lib/store';
 import { useRouter } from 'next/navigation';
 import { db, auth } from '@/lib/firebase';
 import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth';
 import { RITUAL_OPTIONS } from '@/lib/constants';
 import { FiMail, FiLock, FiUser, FiInfo } from 'react-icons/fi';
 
@@ -92,8 +92,12 @@ const BookingForm: React.FC = () => {
             displayName: formData.name,
             fullName: formData.name,
             mobNumber: formData.contactNumber,
-            role: 'Yajamani'
+            role: 'Yajamani',
+            emailVerified: false,
           });
+
+          // Send verification email
+          await sendEmailVerification(newUser);
 
           currentUserId = newUser.uid;
           currentUserEmail = newUser.email || '';

@@ -111,6 +111,10 @@ export default function PujariDashboardPage() {
       router.push('/login?redirect=/pujari/dashboard&role=Pujari');
       return;
     }
+    if (!authLoading && user && !user.emailVerified) {
+      router.push('/verify-email');
+      return;
+    }
     if (user && user.role === 'Pujari') {
       fetchPendingBookings();
     }

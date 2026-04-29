@@ -34,6 +34,8 @@ export default function YajamaniDashboard() {
   useEffect(() => {
     if (!authLoading && !user) {
       router.push('/login?redirect=/profile');
+    } else if (!authLoading && user && !user.emailVerified) {
+      router.push('/verify-email');
     }
   }, [user, authLoading, router]);
 

@@ -6,7 +6,8 @@ import { auth, db } from '@/lib/firebase';
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  updateProfile
+  updateProfile,
+  sendEmailVerification
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { useAuthStore } from '@/lib/store';
@@ -78,6 +79,9 @@ function LoginContent() {
           location,
           createdAt: new Date().toISOString()
         });
+
+        // Send verification email
+        await sendEmailVerification(result.user);
       }
 
       const firebaseUser = result.user;
@@ -112,7 +116,17 @@ function LoginContent() {
         role: userData.role,
         mobNumber: userData.mobNumber,
         location: userData.location,
+        emailVerified: firebaseUser.emailVerified,
       });
+
+      // Check email verification
+      if (!firebaseUser.emailVerified) {
+        setSuccessMsg(isNewUser ? 'Account created! Please verify your email.' : 'Please verify your email to continue.');
+        setTimeout(() => {
+          router.push('/verify-email');
+        }, 1000);
+        return;
+      }
 
       setSuccessMsg(isLogin ? 'Successfully logged in!' : 'Account created successfully!');
 
